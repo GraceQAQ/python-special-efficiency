@@ -19,7 +19,7 @@
 '''
 from PIL import Image
 
-class wordCloud:
+class charsetPicture:
     '''
      This is a main Class, the file contains all documents.
      One document contains paragraphs that have several sentences
@@ -71,6 +71,6 @@ class wordCloud:
             f.write(txt)
 
 if __name__ == '__main__':
-    wordCloud().hello().run()
+    charsetPicture().hello().run()
 
 
