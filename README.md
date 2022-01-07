@@ -10,8 +10,8 @@
 ## 项目结构
 - [词云表白专用](https://github.com/autofelix/python-special-efficiency/blob/main/word_cloud/main.py)
 - [千图成像](https://github.com/autofelix/python-special-efficiency/blob/main/thousand_map_imaging/main.py)
-- [图片转成字符图片](https://github.com/autofelix/python-special-efficiency/blob/main/charset_picture/main.py)
-- [图片转成数字图片](https://github.com/autofelix/python-special-efficiency/blob/main/digital_picture/main.py)
+- [字符成像](https://github.com/autofelix/python-special-efficiency/blob/main/charset_picture/main.py)
+- [数字成像](https://github.com/autofelix/python-special-efficiency/blob/main/digital_picture/main.py)
 
 ## 项目贡献
 
