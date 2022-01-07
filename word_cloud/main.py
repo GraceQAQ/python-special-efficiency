@@ -17,9 +17,10 @@
 #
 #-------------------------------------------------------------------
 '''
+import jieba
+import numpy as np
+import PIL.Image as image
 from wordcloud import WordCloud
-import cv2, jieba
-import matplotlib.pyplot as plt
 
 class wordCloud:
     '''
@@ -51,7 +52,7 @@ class wordCloud:
             word = f.read()
 
         cut_word = ' '.join(jieba.cut(word))
-        color_mask = cv2.imread(self.bg_img)
+        color_mask = np.array(image.open(self.bg_img))
 
         word_cloud = WordCloud(
             # 设置字体，不指定就会出现乱码
@@ -64,13 +65,11 @@ class wordCloud:
             max_words=120,
             # 最大号字体
             max_font_size=2000
-        )
+        ).generate(cut_word)
 
-        result = word_cloud.generate(cut_word)
-        result.to_file('word_cloud.jpg')
-        plt.imshow(result, interpolation='bilinear')
-        plt.axis('off')
-        plt.show()
+        word_cloud.to_file('word_cloud.jpg')
+        image = word_cloud.to_image()
+        image.show()
 
 
 if __name__ == '__main__':
