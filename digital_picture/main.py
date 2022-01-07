@@ -38,7 +38,7 @@ class wordCloud:
         :return: self
         '''
         print('*' * 50)
-        print(' ' * 25 + '数字画像')
+        print(' ' * 20 + '数字画像')
         print(' ' * 5 + 'Author: autofelix  Date: 2021-01-06 13:14')
         print('*' * 50)
         return self
