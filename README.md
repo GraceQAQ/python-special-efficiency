@@ -7,30 +7,23 @@
 - [图片转成字符图片](https://github.com/autofelix/python-special-efficiency/blob/main/charset_picture/main.py)
 - [图片转成数字图片](https://github.com/autofelix/python-special-efficiency/blob/main/digital_picture/main.py)
 
-## Donate
+## 项目贡献
 
-If you find this project useful, you can buy author a glass of juice :tropical_drink:
+如果你觉得项目有用, 就请我喝杯奶茶吧 :tropical_drink:
 
 ![donate](https://autofelix.github.io/autofelix/assets/imgs/sponsor.png)
 
-[Paypal Me](https://www.paypal.me/autofelix)
+## 加入我们
 
-[Buy me a coffee](https://www.buymeacoffee.com/autofelix)
+如果你觉得项目有用, 就关注我的个人公众号吧 :tropical_drink:
 
-## Join Me
+![donate](https://autofelix.github.io/autofelix/assets/imgs/userinfo.png)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/javascript-支持-ff69b4.svg" alt="微信号">
-  <img src="https://img.shields.io/badge/javascript-支持-ff69b4.svg" alt="公众号">
-</p>
-
-## Browsers support
-
-Modern browsers and Internet Explorer 10+.
+## 浏览器支持情况
 
 | [<img src="https://autofelix.github.io/autofelix/assets/icons/ie.svg" alt="IE / Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://autofelix.github.io/autofelix/assets/icons/firefox.svg" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://autofelix.github.io/autofelix/assets/icons/chrome.svg" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://autofelix.github.io/autofelix/assets/icons/safari.svg" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://autofelix.github.io/autofelix/assets/icons/sogou.svg" alt="Sogou" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Sogou | [<img src="https://autofelix.github.io/autofelix/assets/icons/uc.svg" alt="UC" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>UC | [<img src="https://autofelix.github.io/autofelix/assets/icons/360.svg" alt="360" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>360 |
 | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| all versions | all versions | all versions | all versions | all versions | all versions | all versions |
+| 所有版本 | 所有版本 | 所有版本 | 所有版本 | 所有版本 | 所有版本 | 所有版本 |
 
 ## License
 
