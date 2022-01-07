@@ -1,6 +1,12 @@
 # python-special-efficiency
 🌈Python特效实战：词云表白、图片转字符画、图片转数字画、千图成像、数字舞蹈等
 
+<p align="center">
+  <img src="https://img.shields.io/badge/python->=3.0-ff69b4.svg" alt="python">
+  <img src="https://img.shields.io/badge/pip->=3.0-6bb59a.svg" alt="pip">
+  <img src="https://img.shields.io/badge/pycharm->=3.0-brightgreen.svg" alt="pycharm">
+</p>
+
 ## 项目结构
 - [词云表白专用](https://github.com/autofelix/python-special-efficiency/blob/main/word_cloud/main.py)
 - [千图成像](https://github.com/autofelix/python-special-efficiency/blob/main/thousand_map_imaging/main.py)
@@ -15,7 +21,7 @@
 
 ## 加入我们
 
-如果你觉得项目有用, 就关注我的个人公众号吧 :tropical_drink:
+想学习更多的技术知识, 就关注我的个人公众号吧 :blush:
 
 ![donate](https://autofelix.github.io/autofelix/assets/imgs/userinfo.png)
 
