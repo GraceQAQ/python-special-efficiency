@@ -29,7 +29,7 @@ class charsetPicture:
     def __init__(self):
         self.char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
         self.width = 60
-        self.height = 45
+        self.height = 60
 
     def hello(self):
         '''
@@ -59,9 +59,9 @@ class charsetPicture:
         '''
         The program entry
         '''
-        im = Image.open('assets/back.jpeg')
+        im = Image.open('assets/picture.jpeg')
         im = im.resize((self.width, self.height), Image.NEAREST)
-        txt = ""
+        txt = ''
         for i in range(self.height):
             for j in range(self.width):
                 txt += self.get_char(*im.getpixel((j, i)))
