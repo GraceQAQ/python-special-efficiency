@@ -68,8 +68,8 @@ class wordCloud:
         ).generate(cut_word)
 
         word_cloud.to_file('word_cloud.jpg')
-        image = word_cloud.to_image()
-        image.show()
+        im = word_cloud.to_image()
+        im.show()
 
 
 if __name__ == '__main__':
