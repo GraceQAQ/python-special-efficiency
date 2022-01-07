@@ -11,9 +11,9 @@
 #
 #                   @Programmer   : autofelix
 #
-#                   @Start Date   : 2021-01-07 13:14
+#                   @Start Date   : 2022/01/07 13:14
 #
-#                   @Last Update  : 2021-01-07 13:14
+#                   @Last Update  : 2022/01/07 13:14
 #
 #-------------------------------------------------------------------
 '''
@@ -38,7 +38,7 @@ class charsetPicture:
         '''
         print('*' * 50)
         print(' ' * 18 + '图片转换为字符图片')
-        print(' ' * 5 + 'Author: autofelix  Date: 2021-01-07 13:14')
+        print(' ' * 5 + 'Author: autofelix  Date: 2022-01-07 13:14')
         print('*' * 50)
         return self
 
