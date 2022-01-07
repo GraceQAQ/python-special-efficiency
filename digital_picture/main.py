@@ -11,9 +11,9 @@
 #
 #                   @Programmer   : autofelix
 #
-#                   @Start Date   : 2021-01-06 13:14
+#                   @Start Date   : 2022/01/06 13:14
 #
-#                   @Last Update  : 2021-01-06 13:14
+#                   @Last Update  : 2022/01/06 13:14
 #
 #-------------------------------------------------------------------
 '''
@@ -38,7 +38,7 @@ class digitalPicture:
         '''
         print('*' * 50)
         print(' ' * 20 + '数字成像')
-        print(' ' * 5 + 'Author: autofelix  Date: 2021-01-06 13:14')
+        print(' ' * 5 + 'Author: autofelix  Date: 2022-01-06 13:14')
         print('*' * 50)
         return self
 
