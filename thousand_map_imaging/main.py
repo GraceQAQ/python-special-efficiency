@@ -5,7 +5,7 @@
 #                   CONFIDENTIAL --- CUSTOM STUDIOS
 #-------------------------------------------------------------------
 #
-#                   @Project Name : 千图成像_方法一
+#                   @Project Name : 千图成像
 #
 #                   @File Name    : main.py
 #
@@ -17,215 +17,135 @@
 #
 #-------------------------------------------------------------------
 '''
-import os, shutil, time
-from multiprocessing import Pool
+import os
+from PIL import Image
 import numpy as np
-from PIL import Image, ImageFile, ImageOps
 
-ImageFile.LOAD_TRUNCATED_IMAGES = True
+class thousandMapImaging:
+    def __init__(self):
+        self.picture_path = 'assets/picture.jpeg'
+        self.thousand_picture_path = 'assets/images/'
 
-
-class HsvCompositeImage:
-    def __init__(self, image_path, imagedb_dir,
-                 meta_width=16, meta_height=9, blend_scale=0.5) -> None:
+    def compute_mean(self, imgPath):
         '''
-        :param image_path: The original image path
-        :param imagedb_dir: The original image database directory
-        :param meta_width: The image's width from meta database(different from original image database)
-        :param meta_height: The image's height from meta database(different from original image database)
-        :param blend_scale: When the new image is synthesized, it will
-            be mixed with original image to improve the recongnition
+        获取图像平均颜色值
+        :param imgPath: 缩略图路径
+        :return: （r，g，b）整个缩略图的rgb平均值
         '''
-        self.meta_width = meta_width
-        self.meta_height = meta_height
-        self.blend_scale = blend_scale
-        self.imagedb_dir = imagedb_dir
-        self.image_path = image_path
-        self.metadb_width = 160
-        self.metadb_height = 90
-        self.type = 'hsv'
-        self.metadb_dir = "/".join(imagedb_dir.split('/')
-                                   [:-1]) + '_' + self.type + 'db/'
-        self.metadb_info_dir = "/".join(imagedb_dir.split('/')
-                                        [:-1]) + '_' + self.type + 'db.npy'
-        self.pool = Pool()
-
-        self.init_func()
-
-    def init_func(self):
-        self.init_image()
-        self.create_metadb()
-        self.init_metadb()
-
-    def init_image(self):
-        self.image = Image.open(self.image_path)
-        self.image_width, self.image_height = self.image.size
-        self.image_hsv = self.image.convert('HSV')
-        self.new_image = Image.new('RGB', self.image.size)
-        self.new_image_path = "_new.".join(self.image_path.split('.'))
-        self.new_image = Image.new('RGB', self.image.size)
-
-    def create_metadb(self):
-        print("Create meta database: ", self.metadb_dir)
-        if os.path.exists(self.metadb_dir):
-            shutil.rmtree(self.metadb_dir)  # test time for creating metadb
-            # return
-        os.mkdir(self.metadb_dir)
-        print('Create metadb...')
-        images_path = []
-        for filename in os.listdir(self.imagedb_dir):
-            images_path.append(self.imagedb_dir + filename)
-        start_time = time.time()
-
-        # map:  blocking ans ordered worker pool [returns: list]            2.9s
-        # imap: non-blocking and ordered worker pool [returns: iterator]    21.3s
-        # uimap: non-blocking and unordered worker pool [reutrns: iterator] 20.5s
-        # amap: asynchronosn worker pool [returns: object]                  3.0s
-        # 1: 0.83s;    2: 0.64s;    3: 0.73s;    4: 0.87s
-        # 5: 1.01s;    6: 1.18s;    7: 1.32s;    8: 1.44s
-        pool = Pool(2)
-        pool.map(self.convert_imagedb_to_metadb, images_path)
-        pool.close()
-        pool.join()
-        pool.clear()
-        end_time = time.time()
-        print('Create metadb time:', end_time - start_time)
-
-    def cal_mean_hsv(self, image):
-        # ========== method 1: 1.37s ==========
-        # width, height = image.size
-        # image_load = image.load()
-        # H, S, V = 0, 0, 0
-        # for w in range(width):
-        #     for h in range(height):
-        #         r, g, b = image_load[w, h]
-        #         h, s, v = rgb_to_hsv(r / 255, g / 255, b / 255)
-        #         H += h; S += s; V += v
-        # count = width * height
-        # H_mean = round(H / count, 3)
-        # S_mean = round(S / count, 3)
-        # V_mean = round(V/count, 3)
-        # return np.array([H_mean, S_mean, V_mean])
-
-        # ========== method 2: 0.63s ==========
-        width, height = image.size
-        image_hsv = image.convert('HSV')
-        image_array = np.array(image_hsv)
-        pixels_number = width * height
-        hsv_array = np.round(image_array.sum(
-            axis=0).sum(axis=0) / pixels_number, 3)
-        return hsv_array
-
-    def convert_imagedb_to_metadb(self, image_path):
-        image = Image.open(image_path)
-        image = ImageOps.fit(
-            image, (self.metadb_width, self.metadb_height), Image.LANCZOS)
-        image_mean_hsv_value = self.cal_mean_hsv(image)
-        image.save(self.metadb_dir + str(list(image_mean_hsv_value)) + ".jpg")
-
-    def init_metadb(self):
-        metadb = []
-        for filename in os.listdir(self.metadb_dir):
-            if filename == 'None.jpg':
-                pass
-            else:
-                filename = filename.split('.jpg')[0][1:-1].split(', ')
-                hsv_array = np.array(list(map(float, filename)))
-                metadb.append(hsv_array)
-        self.metadb = np.array(metadb)
-
-    def find_closed(self, hsv_value):
-        distance = np.linalg.norm(hsv_value - self.metadb, axis=1)
-        position = np.argmin(distance)
-        closed_image_path = self.metadb_dir + \
-                            str(list(self.metadb[position])) + ".jpg"
-        return closed_image_path
-
-    # Error: class variable can't modify by pool.map()
-    def paste_closed_image(self, argc):
-        w_start, h_start = argc
-        w_end = w_start + self.meta_width
-        h_end = h_start + self.meta_height
-        block_image = self.image.crop((w_start, h_start, w_end, h_end))
-        hsv_value = self.cal_mean_hsv(block_image)
-        image_path = self.find_closed(hsv_value)
-        image = Image.open(image_path)
-        paste_image = ImageOps.fit(
-            image, (self.meta_width, self.meta_height), Image.LANCZOS)
-        return paste_image
-        # self.new_image.paste(paste_image, (w_start, h_start))
-
-    # class variable can't modify by pool.map()
-    # ========== parallel create new image: 2.7s ==========#
-    def parallel_create_new_image(self):
-        print("create new image...")
-        start_time = time.time()
-        argc = []
-        width, height = self.image.size
-        for w_start in range(0, width, self.meta_width):
-            for h_start in range(0, height, self.meta_height):
-                block_argc = [w_start, h_start]
-                argc.append(block_argc)
-        end_time_1 = time.time()
-        # argc = [[w_start, h_start] for w_start in range(0, width, self.meta_width)]
-        # 1: 6.87s;    2: 3.85s;    3: 2.94s;    4: 2.42s
-        # 5: 2.11s;    6: 1.97s;    7: 1.87s;    8: 2.02s
-        pool = Pool(7)
-        paste_image_list = pool.map(self.paste_closed_image, argc)
-        pool.close()
-        pool.join()
-        end_time_2 = time.time()
-
-        count = 0
-        for w_start in range(0, width, self.meta_width):
-            for h_start in range(0, height, self.meta_height):
-                self.new_image.paste(paste_image_list[count], (w_start, h_start))
-                count += 1
-        self.new_image = Image.blend(
-            self.new_image, self.image, self.blend_scale)
-        self.new_image.save(self.new_image_path)
-        end_time = time.time()
-        print(len(paste_image_list))
-        print('Parallel create new image time for #init argc#:', end_time_1 - start_time)
-        print('Parallel create new image time for #find closed#:', end_time_2 - end_time_1)
-        print('Parallel create new image time for #paste image#:', end_time - end_time_2)
-        print('Parallel create new image time:', end_time - start_time)
-
-    # ========== no parallel create new image: 5.8s ==========#
-    def create_new_image(self):
-        print("create new image...")
-        start_time = time.time()
-        width, height = self.image.size
-        for w_start in range(0, width, self.meta_width):
-            for h_start in range(0, height, self.meta_height):
-                w_end = w_start + self.meta_width
-                h_end = h_start + self.meta_height
-                block_image = self.image.crop((w_start, h_start, w_end, h_end))
-                hsv_value = self.cal_mean_hsv(block_image)
-                image_path = self.find_closed(hsv_value)
-                image = Image.open(image_path)
-                paste_image = ImageOps.fit(
-                    image, (self.meta_width, self.meta_height), Image.LANCZOS)
-                self.new_image.paste(paste_image, (w_start, h_start))
-        self.new_image = Image.blend(
-            self.new_image, self.image, self.blend_scale)
-        self.new_image.save(self.new_image_path)
-        end_time = time.time()
-        print('No parallel create new image time:', end_time - start_time)
+        im = Image.open(imgPath)
+        im = im.convert("RGB")  # 转为 rgb模式
+        # 把图像数据转为数据序列。以行为单位，每行存储每个像素点的色彩
+        '''如：
+         [[ 60  33  24] 
+          [ 58  34  24]
+          ...
+          [188 152 136] 
+          [ 99  96 113]]
+    
+         [[ 60  33  24] 
+          [ 58  34  24]
+          ...
+          [188 152 136] 
+          [ 99  96 113]]
+        '''
+        imArray = np.array(im)
+        # mean()函数功能：求指定数据的取均值
+        R = np.mean(imArray[:, :, 0])  # 获取所有 R 值的平均值
+        G = np.mean(imArray[:, :, 1])
+        B = np.mean(imArray[:, :, 2])
+        return (R, G, B)
 
 
-def test():
-    h = HsvCompositeImage(image_path="D:/Study/File/千图成像/课程设计/示例图片/“森林”中的一只猫鼬.jpg",
-                          imagedb_dir="D:/Study/File/千图成像/mjpg/",
-                          meta_width=16,
-                          meta_height=9,
-                          blend_scale=0.5)
-    # h.create_new_image()
-    h.parallel_create_new_image()
+    def getImgList(self):
+        """
+        获取缩略图的路径及平均色彩
+        :return: list，存储了图片路径、平均色彩值。
+        """
+        imgList = []
+        for pic in os.listdir(self.thousand_picture_path):
+            imgPath = self.thousand_picture_path + pic
+            imgRGB = self.compute_mean(imgPath)
+            imgList.append({
+                "imgPath": imgPath,
+                "imgRGB": imgRGB
+            })
+        return imgList
 
+
+    def computeDis(self, color1, color2):
+        '''
+        计算两张图的颜色差，计算机的是色彩空间距离。
+        dis = (R**2 + G**2 + B**2)**0.5
+        参数：color1，color2 是色彩数据 （r，g，b）
+        '''
+        dis = 0
+        for i in range(len(color1)):
+            dis += (color1[i] - color2[i]) ** 2
+        dis = dis ** 0.5
+        return dis
+
+
+    def create_image(self, bgImg, imgDir, N=10, M=50):
+        '''
+        根据背景图，用头像填充出新图
+        bgImg：背景图地址
+        imgDir：头像目录
+        N：背景图缩放的倍率
+        M：头像的大小（MxM）
+        '''
+        # 获取图片列表
+        imgList = self.getImgList()
+
+        # 读取图片
+        bg = Image.open(bgImg)
+        # bg = bg.resize((bg.size[0] // N, bg.size[1] // N))  # 缩放。建议缩放下原图，图片太大运算时间很长。
+        bgArray = np.array(bg)
+        width = bg.size[0] * M  # 新生成图片的宽度。每个像素倍放大 M 倍
+        height = bg.size[1] * M  # 新生成图片的高度
+
+        # 创建空白的新图
+        newImg = Image.new('RGB', (width, height))
+
+        # 循环填充图
+        for x in range(bgArray.shape[0]):  # x，行数据,可以用原图宽替代
+            for y in range(bgArray.shape[1]):  # y，列数据，,可以用原图高替代
+                # 找到距离最小的图片
+                minDis = 10000
+                index = 0
+                for img in imgList:
+                    dis = self.computeDis(img['imgRGB'], bgArray[x][y])
+                    if dis < minDis:
+                        index = img['imgPath']
+                        minDis = dis
+                # 循环完毕，index 就是存储了色彩最相近的图片路径
+                #         minDis 存储了色彩差值
+                # 填充
+                tempImg = Image.open(index)  # 打开色差距离最小的图片
+                # 调整图片大小，此处可以不调整，因为我在下载图的时候就已经调整好了
+                tempImg = tempImg.resize((M, M))
+                # 把小图粘贴到新图上。注意 x，y ，行列不要搞混了。相距 M 粘贴一张。
+                newImg.paste(tempImg, (y * M, x * M))
+                print('(%d, %d)' % (x, y))  # 打印进度。格式化输出 x，y
+
+        # 保存图片
+        newImg.save('final.jpg')  # 最后保存图片
+
+    def hello(self):
+        '''
+        This is a welcome speech
+        :return: self
+        '''
+        print('*' * 50)
+        print(' ' * 20 + '千图成像')
+        print(' ' * 5 + 'Author: autofelix  Date: 2022-01-08 13:14')
+        print('*' * 50)
+        return self
+
+    def run(self):
+        '''
+        The program entry
+        '''
+        self.create_image(self.picture_path, self.thousand_picture_path)
 
 if __name__ == '__main__':
-    test()
-
-
-
+    thousandMapImaging().hello().run()
