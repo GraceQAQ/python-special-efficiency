@@ -28,7 +28,7 @@ class charsetPicture:
     '''
     def __init__(self):
         self.char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
-        self.width = 60
+        self.width = 160
         self.height = 60
 
     def hello(self):
@@ -38,7 +38,8 @@ class charsetPicture:
         '''
         print('*' * 50)
         print(' ' * 18 + '图片转换为字符图片')
-        print(' ' * 5 + 'Author: autofelix  Date: 2022-01-07 13:14')
+        print(' ' * 5 + '作者: autofelix  Date: 2022-01-07 13:14')
+        print(' ' * 5 + '主页: https://autofelix.blog.csdn.net')
         print('*' * 50)
         return self
 
