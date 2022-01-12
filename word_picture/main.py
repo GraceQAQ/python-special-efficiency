@@ -28,7 +28,7 @@ class wordPicture:
     '''
     def __init__(self):
         self.font_size = 7
-        self.picture = 'assets/picture.png'
+        self.picture = 'assets/picture.jpeg'
 
     def hello(self):
         '''
