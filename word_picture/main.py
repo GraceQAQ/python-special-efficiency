@@ -45,7 +45,7 @@ class wordPicture:
         '''
         The program entry
         '''
-        word = input('请输入你想说的：') or '我喜欢你！'
+        word = input('请输入你想说的：') or '我钟意你'
 
         resource = Image.open(self.picture)
         img_array = resource.load()
