@@ -19,7 +19,7 @@
 '''
 import jieba
 import numpy as np
-import PIL.Image as image
+import PIL.Image as Image
 from wordcloud import WordCloud
 
 class wordCloud:
@@ -30,7 +30,7 @@ class wordCloud:
      Then the new content will be saved by this class
     '''
     def __init__(self):
-        self.bg_img = 'assets/back.jpeg'
+        self.bg_img = 'assets/picture.jpeg'
         self.word_path = 'assets/word.txt'
 
     def hello(self):
@@ -52,7 +52,7 @@ class wordCloud:
             word = f.read()
 
         cut_word = ' '.join(jieba.cut(word))
-        color_mask = np.array(image.open(self.bg_img))
+        color_mask = np.array(Image.open(self.bg_img))
 
         word_cloud = WordCloud(
             # 设置字体，不指定就会出现乱码
