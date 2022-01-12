@@ -19,7 +19,7 @@
 '''
 from PIL import Image, ImageDraw, ImageFont
 
-class digitalPicture:
+class wordPicture:
     '''
      This is a main Class, the file contains all documents.
      One document contains paragraphs that have several sentences
@@ -28,7 +28,7 @@ class digitalPicture:
     '''
     def __init__(self):
         self.font_size = 7
-        self.picture = 'assets/picture.jpeg'
+        self.picture = 'assets/picture.png'
 
     def hello(self):
         '''
@@ -69,6 +69,6 @@ class digitalPicture:
 
 
 if __name__ == '__main__':
-    digitalPicture().hello().run()
+    wordPicture().hello().run()
 
 
