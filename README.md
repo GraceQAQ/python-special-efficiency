@@ -24,6 +24,7 @@
 - [图片转换特效之黑白](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_1.py)
 - [图片转换特效之流年](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_2.py)
 - [图片转换特效之旧电影](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_3.py)
+- [图片转换特效之反色](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_4.py)
 
 ## 项目贡献
 
