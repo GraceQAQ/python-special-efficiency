@@ -18,9 +18,9 @@
 - [一行代码之打印芭蕉扇](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_2.py)
 - [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_3.py)
 - [一行代码实现快速排序](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_4.py)
-- [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_5.py)
-- [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_6.py)
-- [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_7.py)
+- [一行代码之看小说](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_5.py)
+- [一行代码之打造迷宫](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_6.py)
+- [一行代码之python之禅](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_7.py)
 
 ## 项目贡献
 
