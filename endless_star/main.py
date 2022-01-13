@@ -44,6 +44,9 @@ class star:
         return self
 
     def run(self):
+        '''
+        The program entry
+        '''
         turtle.bgcolor('black')
         t = turtle.Pen()
         for x in range(self.circle):
