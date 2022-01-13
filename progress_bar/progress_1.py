@@ -43,6 +43,9 @@ class progress:
         return self
 
     def run(self):
+        '''
+        The program entry
+        '''
         for i in range(1, 101):
             print('\r', end='')
             print('Download progress: {}%: '.format(i), '▋' * (i // 2), end='')
