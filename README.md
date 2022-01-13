@@ -1,5 +1,5 @@
 # python-special-efficiency
-🌈Python特效实战：词云表白、图片转字符画、图片转数字画、千图成像、数字舞蹈、可视化进度条、无穷炫酷五角星、黑客帝国代码雨、无法关闭的表白弹窗等
+🌈Python特效实战：词云表白、图片转字符画、图片转数字画、千图成像、数字舞蹈、可视化进度条、无穷炫酷五角星、黑客帝国代码雨、无法关闭的表白弹窗、一行代码能实现的丧心病狂的功能、图片特效转换、高级图片特效处理、3d图片渲染等
 
 <p align="center">
   <img src="https://img.shields.io/badge/python->=3.0-ff69b4.svg" alt="python">
