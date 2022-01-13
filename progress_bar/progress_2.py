@@ -43,16 +43,19 @@ class progress:
         return self
 
     def run(self):
-        print("执行开始，祈祷不报错".center(self.scale // 2, "-"))
+        '''
+        The program entry
+        '''
+        print('执行开始，祈祷不报错' . center(self.scale // 2, '-'))
         start = time.perf_counter()
         for i in range(self.scale + 1):
-            a = "*" * i
-            b = "." * (self.scale - i)
+            a = '*' * i
+            b = '.' * (self.scale - i)
             c = (i / self.scale) * 100
             dur = time.perf_counter() - start
-            print("\r{:^3.0f}%[{}->{}]{:.2f}s".format(c, a, b, dur), end="")
+            print('\r{:^3.0f}%[{}->{}]{:.2f}s' . format(c, a, b, dur), end='')
             time.sleep(0.1)
-        print("\n" + "执行结束，万幸".center(self.scale // 2, "-"))
+        print('\n执行结束，万幸' . center(self.scale // 2, '-'))
 
 if __name__ == '__main__':
     progress().hello().run()
