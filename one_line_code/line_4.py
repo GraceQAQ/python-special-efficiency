@@ -5,9 +5,9 @@
 #                   CONFIDENTIAL --- CUSTOM STUDIOS
 #-------------------------------------------------------------------
 #
-#                   @Project Name : 一行代码实现快速排序
+#                   @Project Name : 一行代码之实现快速排序
 #
-#                   @File Name    : line_3.py
+#                   @File Name    : line_4.py
 #
 #                   @Programmer   : autofelix
 #
