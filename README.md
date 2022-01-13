@@ -16,6 +16,11 @@
 - [无限五角星](https://github.com/autofelix/python-special-efficiency/blob/main/endless_star/main.py)
 - [一行代码之打印爱心](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_1.py)
 - [一行代码之打印芭蕉扇](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_2.py)
+- [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_3.py)
+- [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_4.py)
+- [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_5.py)
+- [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_6.py)
+- [一行代码之九九乘法表](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_7.py)
 
 ## 项目贡献
 
