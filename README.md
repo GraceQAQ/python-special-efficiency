@@ -31,6 +31,13 @@
 - [可视化进度条四](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_4.py)
 - [可视化进度条五](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_5.py)
 - [可视化进度条六](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_6.py)
+- [3d渲染之立方体](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_1.py)
+- [3d渲染之平面](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_2.py)
+- [3d渲染之球体](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_3.py)
+- [3d渲染之波浪球](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_4.py)
+- [3d渲染之抛物面](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_5.py)
+- [3d渲染之多面体](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_6.py)
+- [3d渲染之散点图](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_7.py)
 
 ## 项目贡献
 
