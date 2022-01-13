@@ -5,9 +5,9 @@
 #                   CONFIDENTIAL --- CUSTOM STUDIOS
 #-------------------------------------------------------------------
 #
-#                   @Project Name : 高级图片转换特效之素描
+#                   @Project Name : 高级图片转换特效之图像模糊
 #
-#                   @File Name    : effects_4.py
+#                   @File Name    : effects_11.py
 #
 #                   @Programmer   : autofelix
 #
