@@ -1,1 +1,1 @@
-python -m http.server 8080
+print(''.join(__import__('random').choice('/\\') for i in range(50*24)))
