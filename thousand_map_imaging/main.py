@@ -11,9 +11,9 @@
 #
 #                   @Programmer   : autofelix
 #
-#                   @Start Date   : 2022/01/08 13:14
+#                   @Start Date   : 2022/01/13 13:14
 #
-#                   @Last Update  : 2022/01/08 13:14
+#                   @Last Update  : 2022/01/13 13:14
 #
 #-------------------------------------------------------------------
 '''
@@ -33,7 +33,7 @@ class thousandMapImaging:
         :return: （r，g，b）整个缩略图的rgb平均值
         '''
         im = Image.open(imgPath)
-        im = im.convert("RGB")  # 转为 rgb模式
+        im = im.convert('RGB')  # 转为 rgb模式
         # 把图像数据转为数据序列。以行为单位，每行存储每个像素点的色彩
         '''如：
          [[ 60  33  24] 
@@ -137,7 +137,7 @@ class thousandMapImaging:
         '''
         print('*' * 50)
         print(' ' * 20 + '千图成像')
-        print(' ' * 5 + 'Author: autofelix  Date: 2022-01-08 13:14')
+        print(' ' * 5 + 'Author: autofelix  Date: 2022-01-13 13:14')
         print('*' * 50)
         return self
 
