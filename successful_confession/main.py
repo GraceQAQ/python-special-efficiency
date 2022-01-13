@@ -1,5 +1,4 @@
-import pygame
-import random
+import random, pygame
 
 # 设置游戏屏幕大小 这是一个常量
 WIDTH, HEIGHT = 640, 480
@@ -12,11 +11,6 @@ pygame.display.set_caption('FROM一个喜欢你很久的小哥哥')
 def title(text, screen, scale, color=(255, 0, 0)):
     font = pygame.font.SysFont('SimHei', WIDTH // (len(text) * 2))
     textRender = font.render(text, True, color)
-
-    # 获取此图片的矩形框
-    # textRect = textRender.get_rect()
-    # textRect.midtop = (WIDTH/scale[0], HEIGHT/scale[1])
-    # screen.blit(textRender, textRect)
 
     # 初始化文字的坐标
     screen.blit(textRender, (WIDTH / scale[0], HEIGHT / scale[1]))
@@ -73,7 +67,7 @@ def main():
         # 填充窗口
         screen.fill((255, 255, 255))
 
-        img = pygame.image.load('d:/love2.png')
+        img = pygame.image.load('assets/picture.jpeg')
         imgRect = img.get_rect()
         imgRect.midtop = int(WIDTH / 1.3), HEIGHT // 7
         screen.blit(img, imgRect)
