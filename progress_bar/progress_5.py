@@ -51,7 +51,7 @@ class progress:
   with alive_bar(len(items)) as bar:
    for item in items:
      bar()
-     time.sleep(0.1)
+     time.sleep(1)
 
 if __name__ == '__main__':
  progress().hello().run()
