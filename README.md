@@ -38,6 +38,8 @@
 - [3d渲染之抛物面](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_5.py)
 - [3d渲染之多面体](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_6.py)
 - [3d渲染之散点图](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_7.py)
+- [黑客帝国代码雨](https://github.com/autofelix/python-special-efficiency/blob/main/the_matrix_code_rain/main.py)
+- [无法关闭的表白弹窗](https://github.com/autofelix/python-special-efficiency/blob/main/successful_confession/main.py)
 
 ## 项目贡献
 
