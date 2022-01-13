@@ -22,6 +22,7 @@
 - [一行代码之打造迷宫](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_6.py)
 - [一行代码之python之禅](https://github.com/autofelix/python-special-efficiency/blob/main/one_line_code/line_7.py)
 - [图片转换特效之黑白](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_1.py)
+- [图片转换特效之流年](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_2.py)
 
 ## 项目贡献
 
