@@ -25,6 +25,12 @@
 - [图片转换特效之流年](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_2.py)
 - [图片转换特效之旧电影](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_3.py)
 - [图片转换特效之反色](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion/effects_4.py)
+- [可视化进度条一](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_1.py)
+- [可视化进度条二](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_2.py)
+- [可视化进度条三](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_3.py)
+- [可视化进度条四](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_4.py)
+- [可视化进度条五](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_5.py)
+- [可视化进度条六](https://github.com/autofelix/python-special-efficiency/blob/main/progress_bar/progress_6.py)
 
 ## 项目贡献
 
