@@ -40,6 +40,18 @@
 - [3d渲染之散点图](https://github.com/autofelix/python-special-efficiency/blob/main/rendering_3d_effect/rendering_7.py)
 - [黑客帝国代码雨](https://github.com/autofelix/python-special-efficiency/blob/main/the_matrix_code_rain/main.py)
 - [无法关闭的表白弹窗](https://github.com/autofelix/python-special-efficiency/blob/main/successful_confession/main.py)
+- [高级图片转换特效之毛玻璃](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_1.py)
+- [高级图片转换特效之浮雕](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_2.py)
+- [高级图片转换特效之油漆](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_3.py)
+- [高级图片转换特效之素描](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_4.py)
+- [高级图片转换特效之怀旧](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_5.py)
+- [高级图片转换特效之光照](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_6.py)
+- [高级图片转换特效之流年](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_7.py)
+- [高级图片转换特效之水波](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_8.py)
+- [高级图片转换特效之卡通](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_9.py)
+- [高级图片转换特效之滤镜](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_10.py)
+- [高级图片转换特效之直方图均衡化](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_11.py)
+- [高级图片转换特效之图像模糊](https://github.com/autofelix/python-special-efficiency/blob/main/picture_effects_conversion_pro/effects_12.py)
 
 ## 项目贡献
 
